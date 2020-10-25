@@ -113,6 +113,8 @@ io.on('connection', (socket) => {
 	})
 })
 
+console.log(process.env.PORT);
+
 server.listen(app.get('port'), () => {
 	console.log("listening on", app.get('port'))
 })
