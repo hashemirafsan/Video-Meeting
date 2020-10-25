@@ -22,7 +22,7 @@ import "./Video.css"
 
 // const server_url = process.env.NODE_ENV === 'production' ? 'https://video.biboron.xyz:4001' : "http://localhost:4001"
 
-const server_url = 'https://staging.bonanigroup.com:4001';
+const server_url = 'https://f60f42fdb1fd.ngrok.io';
 
 var connections = {}
 const peerConnectionConfig = {
