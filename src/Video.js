@@ -20,13 +20,89 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
 
-const server_url = process.env.NODE_ENV === 'production' ? 'https://video.sebastienbiollo.com' : "http://localhost:4001"
+const server_url = process.env.NODE_ENV === 'production' ? 'https://video.biboron.xyz' : "http://localhost:4001"
 
 var connections = {}
 const peerConnectionConfig = {
 	'iceServers': [
-		// { 'urls': 'stun:stun.services.mozilla.com' },
-		{ 'urls': 'stun:stun.l.google.com:19302' },
+		{ 
+			'urls': 'stun:stun.services.mozilla.com' 
+		},
+		{ 
+			'urls': 'stun:stun.l.google.com:19302' 
+		},
+		{ 
+			'urls':'stun:stun01.sipphone.com'
+		},
+		{ 
+			'urls':'stun:stun.ekiga.net'
+		},
+		{ 
+			'urls':'stun:stun.fwdnet.net'
+		},
+		{ 
+			'urls':'stun:stun.ideasip.com'
+		},
+		{ 
+			'urls':'stun:stun.iptel.org'
+		},
+		{ 
+			'urls':'stun:stun.rixtelecom.se'
+		},
+		{ 
+			'urls':'stun:stun.schlund.de'
+		},
+		{ 
+			'urls':'stun:stun.l.google.com:19302'
+		},
+		{ 
+			'urls':'stun:stun1.l.google.com:19302'
+		},
+		{ 
+			'urls':'stun:stun2.l.google.com:19302'
+		},
+		{ 
+			'urls':'stun:stun3.l.google.com:19302'
+		},
+		{ 
+			'urls':'stun:stun4.l.google.com:19302'
+		},
+		{ 
+			'urls':'stun:stunserver.org'
+		},
+		{ 
+			'urls':'stun:stun.softjoys.com'
+		},
+		{ 
+			'urls':'stun:stun.voiparound.com'
+		},
+		{ 
+			'urls':'stun:stun.voipbuster.com'
+		},
+		{ 
+			'urls':'stun:stun.voipstunt.com'
+		},
+		{ 
+			'urls':'stun:stun.voxgratia.org'
+		},
+		{ 
+			'urls':'stun:stun.xten.com'
+		},
+		{
+			'urls': 'turn:numb.viagenie.ca',
+			credential: 'muazkh',
+			username: 'webrtc@live.com'
+		},
+		{
+			'urls': 'turn:192.158.29.39:3478?transport=udp',
+			credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+			username: '28224511:1379330808'
+		},
+		{
+			'urls': 'turn:192.158.29.39:3478?transport=tcp',
+			credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+			username: '28224511:1379330808'
+		}
 	]
 }
 var socket = null
@@ -443,14 +519,14 @@ class Video extends Component {
 	}
 
 	render() {
-		if(this.isChrome() === false){
-			return (
-				<div style={{background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
-						textAlign: "center", margin: "auto", marginTop: "50px", justifyContent: "center"}}>
-					<h1>Sorry, this works only with Google Chrome</h1>
-				</div>
-			)
-		}
+		// if(this.isChrome() === false){
+		// 	return (
+		// 		<div style={{background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
+		// 				textAlign: "center", margin: "auto", marginTop: "50px", justifyContent: "center"}}>
+		// 			<h1>Sorry, this works only with Google Chrome</h1>
+		// 		</div>
+		// 	)
+		// }
 		return (
 			<div>
 				{this.state.askForUsername === true ?
